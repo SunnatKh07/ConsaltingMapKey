@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MAPKEY · Иммиграция и образование – дизайн первой страницы</title>
   <!-- Fonts & Icons moved to main.css -->
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="./main.css">
 
 </head>
 
@@ -15,17 +15,16 @@
     <!-- 1. Шапка -->
     <header class="navbar">
       <div class="logo-wrapper">
-        <img style="width: 140px; margin-left: 0px;" src="img/logo-head.png" alt="Map&Key Consulting">
+        <img class="logo-img" src="img/logo-head.png" alt="Map&Key Consulting">
         <!-- <span class="logo-main" style="margin-left:12px;font-weight:700;font-size:1.1rem;color:var(--navy);">Map&Key
           Consulting</span> -->
       </div>
-      <div class="logo-actions" style="display:flex;align-items:center;gap:12px;">
+      <div class="logo-actions">
         <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
           <span class="hamburger"></span>
         </button>
         <div class="search-wrapper">
-          <input type="search" placeholder="Поиск..."
-            style="padding:8px 12px;border-radius:8px;border:1px solid var(--gray-light);font-size:0.95rem;" />
+          <input class="search-input" type="search" placeholder="Поиск..." />
         </div>
       </div>
       <div class="nav-menu" aria-hidden="true">
@@ -37,12 +36,6 @@
           <a href="#">Контакты</a>
         </div>
         <div class="nav-right">
-          <div class="social-icons" style="display:flex;gap:10px;align-items:center;font-size:1.05rem;">
-            <span>✈️</span>
-            <span>▶️</span>
-            <span>📸</span>
-            <span>🎵</span>
-          </div>
           <button class="btn-outline" type="button">
             <i class="far fa-calendar-check"></i> Подобрать программу
           </button>
@@ -67,7 +60,7 @@
             <i class="fas fa-gem"></i> Для более подробной информации, вы можете связаться с нами.
           </button>
           <button class="btn-secondary" type="button">
-            Наши услуги <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+            Наши услуги <i class="fas fa-arrow-right icon-right"></i>
           </button>
         </div>
       </div>
@@ -95,7 +88,7 @@
     </section>
 
     <!-- Social Proof -->
-    <div class="social-proof" style="margin: 30px 0 10px;">
+    <div class="social-proof">
       <div class="stats-row">
         <div class="stat-item">
           <div class="stat-num">98%</div>
@@ -110,8 +103,7 @@
           <div class="stat-label">Стран сотрудничества</div>
         </div>
       </div>
-      <div style="text-align:center; color:var(--text-soft); margin-top:12px; font-weight:600;">Сопровождение под ключ
-      </div>
+      <div class="social-proof-note">Сопровождение под ключ</div>
     </div>
 
     <!-- 3. Ключевые направления -->
@@ -179,12 +171,10 @@
       <div class="visa-illustration">
         <div class="passport-mock">
           <i class="fas fa-passport"></i>
-          <div style="font-weight: 600; margin: 12px 0; color: white;">ОДОБРЕНО</div>
+          <div class="visa-approved">ОДОБРЕНО</div>
           <div class="visa-stamp">VISA · 2026</div>
-          <div style="margin-top: 12px; font-size: 0.95rem; opacity: 0.9;">Мы — команда специалистов по визам, обучению
-            и иммиграции.</div>
-          <div style="margin-top: 10px; font-size:0.9rem; opacity:0.8;">Оформили визу в США за 3 месяца • Поступление в
-            UK без IELTS</div>
+          <div class="passport-note">Мы — команда специалистов по визам, обучению и иммиграции.</div>
+          <div class="passport-subnote">Оформили визу в США за 3 месяца • Поступление в UK без IELTS</div>
         </div>
       </div>
     </div>
@@ -212,7 +202,7 @@
       <p>Реальные примеры успешного сопровождения</p>
       <div class="gold-underline"></div>
     </div>
-    <div class="services-grid" style="margin-top:20px;">
+    <div class="services-grid">
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-check-circle"></i></div>
         <h3>Виза в США за 3 месяца</h3>
@@ -275,24 +265,24 @@
       <p></p>
       <div class="gold-underline"></div>
     </div>
-    <div class="services-grid" style="margin:20px 0 10px;">
+    <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon" style="font-size:28px;">🇺🇸</div>
+        <div class="service-icon service-icon--lg">🇺🇸</div>
         <h3>США</h3>
         <p>Рабочие и студенческие визы, релокация</p>
       </div>
       <div class="service-card">
-        <div class="service-icon" style="font-size:28px;">🇨🇦</div>
+        <div class="service-icon service-icon--lg">🇨🇦</div>
         <h3>Канада</h3>
         <p>Иммиграция и образовательные программы</p>
       </div>
       <div class="service-card">
-        <div class="service-icon" style="font-size:28px;">🇬🇧</div>
+        <div class="service-icon service-icon--lg">🇬🇧</div>
         <h3>Великобритания</h3>
         <p>Поступление, рабочие визы и ВНЖ</p>
       </div>
       <div class="service-card">
-        <div class="service-icon" style="font-size:28px;">🇪🇺</div>
+        <div class="service-icon service-icon--lg">🇪🇺</div>
         <h3>Европа</h3>
         <p>Резидентство и корпоративная релокация</p>
       </div>
@@ -338,10 +328,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-logo">
-          <img style="width: 120px;" src="./img/logo-foot.png" alt="Map&Key Consulting">
-          <p style="margin-top: 20px; color: #CCD6E0; font-size: 0.9rem;">Мы — команда специалистов по визам, обучению и
-            иммиграции.</p>
-          <p style="margin-top: 8px; color: #CCD6E0; font-size: 0.9rem;">© 2026 MapKey Consulting</p>
+          <img class="logo-img" src="./img/logo-foot.png" alt="Map&Key Consulting">
+          <p class="footer-desc">Мы — команда специалистов по визам, обучению и иммиграции.</p>
+          <p class="footer-copy">© 2026 MapKey Consulting</p>
         </div>
         <div class="footer-col">
           <h4>Услуги</h4>
@@ -367,7 +356,7 @@
           <ul>
             <li>Телефон: +998 XX XXX XX XX</li>
             <li>Email: example@gmail.com</li>
-            <li style="margin-top:8px;">✈️ ▶️ 📸 🎵</li>
+            <li class="footer-icons-li">✈️ ▶️ 📸 🎵</li>
           </ul>
         </div>
       </div>
@@ -383,18 +372,6 @@
 
 <!-- styles moved to main.css -->
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var toggle = document.querySelector('.nav-toggle');
-    var navMenu = document.querySelector('.nav-menu');
-    if (!toggle || !navMenu) return;
-    toggle.addEventListener('click', function () {
-      var expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!expanded));
-      navMenu.classList.toggle('open');
-      navMenu.setAttribute('aria-hidden', String(expanded));
-    });
-  });
-</script>
+<script src="js/scripts.js"></script>
 
 </html>
