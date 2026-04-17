@@ -19,11 +19,16 @@
         <!-- <span class="logo-main" style="margin-left:12px;font-weight:700;font-size:1.1rem;color:var(--navy);">Map&Key
           Consulting</span> -->
       </div>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <input type="search" placeholder="Поиск..."
-          style="padding:8px 12px;border-radius:8px;border:1px solid var(--gray-light);font-size:0.95rem;" />
+      <div class="logo-actions" style="display:flex;align-items:center;gap:12px;">
+        <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+        <div class="search-wrapper">
+          <input type="search" placeholder="Поиск..."
+            style="padding:8px 12px;border-radius:8px;border:1px solid var(--gray-light);font-size:0.95rem;" />
+        </div>
       </div>
-      <div class="nav-menu">
+      <div class="nav-menu" aria-hidden="true">
         <div class="nav-links">
           <a href="#">О нас</a>
           <a href="#">Услуги</a>
@@ -38,10 +43,11 @@
             <span>📸</span>
             <span>🎵</span>
           </div>
-          <div class="btn-outline">
+          <button class="btn-outline" type="button">
             <i class="far fa-calendar-check"></i> Подобрать программу
-          </div>
+          </button>
         </div>
+      </div>
 
     </header>
 
@@ -57,12 +63,12 @@
           Полное сопровождение на каждом этапе — от выбора страны до полной адаптации после переезда.
         </p>
         <div class="hero-actions">
-          <div class="btn-primary">
+          <button class="btn-primary" type="button">
             <i class="fas fa-gem"></i> Для более подробной информации, вы можете связаться с нами.
-          </div>
-          <div class="btn-secondary">
+          </button>
+          <button class="btn-secondary" type="button">
             Наши услуги <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
-          </div>
+          </button>
         </div>
       </div>
       <div class="hero-visual">
@@ -376,5 +382,19 @@
 </body>
 
 <!-- styles moved to main.css -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var navMenu = document.querySelector('.nav-menu');
+    if (!toggle || !navMenu) return;
+    toggle.addEventListener('click', function () {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      navMenu.classList.toggle('open');
+      navMenu.setAttribute('aria-hidden', String(expanded));
+    });
+  });
+</script>
 
 </html>

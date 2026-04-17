@@ -52,72 +52,6 @@ html {
   padding: 0 1rem;
 }
 
-/* testimonials */
-.testimonials-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  /* mobile-first */
-  gap: 1.29rem;
-  /* ~20px */
-  margin: 1.71rem 0 2.86rem;
-  /* ~24px 0 40px */
-}
-
-.testimonial-card {
-  background: var(--white);
-  border-radius: 2rem;
-  /* ~28px */
-  padding: 2.14rem 2rem;
-  /* ~30px 28px */
-  box-shadow: var(--shadow-card);
-  border: 0.071rem solid var(--gray-light);
-  /* ~1px */
-  position: relative;
-}
-
-.quote-icon {
-  font-size: 2.5rem;
-  color: var(--gold);
-  opacity: 0.25;
-  position: absolute;
-  top: 1.43rem;
-  /* ~20px */
-  right: 2.14rem;
-  /* ~30px */
-}
-
-.testimonial-text {
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  margin-bottom: 1.71rem;
-  /* ~24px */
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  /* ~14px */
-}
-
-.avatar {
-  width: 3.43rem;
-  /* ~48px */
-  height: 3.43rem;
-  /* ~48px */
-  background: var(--navy);
-  border-radius: 4.29rem;
-  /* ~60px */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
 
 .logo-text-block {
   display: flex;
@@ -165,6 +99,110 @@ html {
   gap: 22px;
 }
 
+/* Hamburger button & responsive menu */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--navy);
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: var(--navy);
+  transition: transform 0.2s ease, top 0.2s ease;
+}
+
+.hamburger::before {
+  top: -6px;
+}
+
+.hamburger::after {
+  top: 6px;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Mobile behaviour */
+@media (max-width: 767px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .search-wrapper {
+    display: none;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: var(--white);
+    border-top: 1px solid var(--gray-light);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.28s ease;
+    z-index: 40;
+    padding: 0 16px;
+  }
+
+  .nav-menu.open {
+    max-height: 420px;
+  }
+
+  .nav-menu .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .nav-menu .nav-links a {
+    padding: 8px 6px;
+  }
+
+  .nav-menu .nav-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+
+  .navbar {
+    position: relative;
+  }
+}
+
 
 .btn-outline {
   border: 0.129rem solid var(--navy);
@@ -178,7 +216,7 @@ html {
   font-size: 0.9rem;
   color: var(--navy);
   transition: 0.2s;
-  cursor: default;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.43rem;
@@ -264,7 +302,7 @@ html {
   align-items: center;
   gap: 0.71rem;
   /* ~10px */
-  cursor: default;
+  cursor: pointer;
   border: 0.0625rem solid transparent;
   /* ~1px */
 }
